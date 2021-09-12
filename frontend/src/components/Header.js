@@ -48,7 +48,7 @@ const HeaderBlock = styled.div`
   }
   nav {
     margin: 0;
-    padding: 2px 170px;
+    padding: 0.13rem 10.6em;
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
     align-items: center;
   }
