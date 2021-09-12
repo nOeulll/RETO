@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link,  } from 'react-router-dom';
 import { BsPersonSquare } from "react-icons/bs";
 import { HiOutlineSearch } from "react-icons/hi";
-import mainLogo from '../assets/mainLogo.svg';
+import mainLogo from '../assets/icons/mainLogo.svg';
 
 function Header() {
 
@@ -44,7 +44,7 @@ function Header() {
 const HeaderBlock = styled.div`
   a {
     text-decoration: none;
-    color: #343a40;
+    color: #2e4052;
   }
   nav {
     margin: 0;
