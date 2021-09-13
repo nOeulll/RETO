@@ -5,7 +5,7 @@ import { basicAlbumData } from '../components/data/basicAlbumData';
 
 function PhotoDetailsPage({ location }) {
   const id = location.state.id;
-  
+
   return (
     <>
       <MainContentsBlock>
@@ -22,9 +22,7 @@ const MainContentsBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  margin-top: 5em;
-
+  margin-top: 0.5em;
 `;
 
 export default PhotoDetailsPage;

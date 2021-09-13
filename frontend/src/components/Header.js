@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { BsPersonSquare } from "react-icons/bs";
+import { IoPersonCircleOutline } from "react-icons/io5";
 import mainLogo from '../assets/icons/mainLogo.svg';
 
 function Header() {
@@ -22,14 +22,18 @@ function Header() {
                   <Link className="album" to="/album">Album</Link>
                 </div>
                 <div className="photo_wrapper">
-                  <Link className="photo" to="/photo">Photo</Link>
+                  <Link
+                    className="photo"
+                    to={{ pathname: "/photo", state: { id: 0 } }}>
+                      Photo
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="navbar__right-side">
               <div className="my">
                 <Link to="/my">
-                  <HeaderProfile><BsPersonSquare /></HeaderProfile>
+                  <HeaderProfile><IoPersonCircleOutline /></HeaderProfile>
                 </Link>
               </div>
             </div>
@@ -138,7 +142,7 @@ const HeaderBlock = styled.div`
 `;
 
 const HeaderProfile = styled.div`
-  font-size: 22px;
+  font-size: 2em;
   color: #FF7676;
 `;
 

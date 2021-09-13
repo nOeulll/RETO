@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs';
 import DetailsPhoto from './DetailsPhoto';
 
-const photoSize = 19;
+const photoSize = 76;
 
 function DetailsPhotoHorizontal({photoData, id}) {
   console.log(id);
@@ -26,7 +26,7 @@ function DetailsPhotoHorizontal({photoData, id}) {
     };
 
     useEffect(() => {
-      // slideRef.current.style.transition = "all 0.8s ease-in-out";
+      slideRef.current.style.transition = "all 0.8s ease-in-out";
       slideRef.current.style.transform = `translateX(-${currentSlide}em)`;
     }, [currentSlide]);
     
@@ -42,6 +42,8 @@ function DetailsPhotoHorizontal({photoData, id}) {
                 <DetailsPhoto
                   id={card.id}
                   imgUrl={imgUrl}
+                  date={card.date}
+                  time={card.time}
                   contents={card.contents}
                 />
               );
@@ -64,18 +66,20 @@ export default DetailsPhotoHorizontal;
 
 const Container = styled.div`
   position: relative;
-  
+  height: 100%;
 `;
 
 const PhotoListBlock = styled.div`
+  display: flex;
+  align-items: center;
   width: 76em;
-  margin: 5em;
+  margin: 0 5em;
+  height: 40em;
   overflow: hidden;
 
   .main_photo {
-    width: 100%;
-    height: 100%;
     display: flex;
+    align-items: center;
   }
 `;
 

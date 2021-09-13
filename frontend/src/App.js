@@ -5,7 +5,6 @@ import AlbumPhotoListPage from './pages/AlbumPhotoListPage';
 import MainPage from './pages/MainPage';
 import MyPage from './pages/MyPage';
 import PhotoDetailsPage from './pages/PhotoDetailsPage';
-import PhotoPage from './pages/PhotoPage';
 
 function App() {
   return (
