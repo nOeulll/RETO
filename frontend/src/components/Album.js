@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IoMdHeartEmpty, IoMdShare } from "react-icons/io";
 import albumBook from '../assets/images/book.svg'
+import { Link } from 'react-router-dom';
 
 function AlbumCard({
   id,
@@ -11,13 +11,15 @@ function AlbumCard({
 {
   return (
       <AlbumCardBlock>
-        <img className="book_img" src={albumBook} alt="album" />
-        <ul className="text_card">
-          <li className="card-title">{title}</li>
-          <li>
-            <span className="card-counts">{counts}</span>
-          </li>
-        </ul>
+        <Link to={`/album/${id}`}>
+          <img className="book_img" src={albumBook} alt="album" />
+          <ul className="text_card">
+            <li className="card-title">{title}</li>
+            <li>
+              <span className="card-counts">{counts}</span>
+            </li>
+          </ul>
+        </Link>
       </AlbumCardBlock>
   );
 }

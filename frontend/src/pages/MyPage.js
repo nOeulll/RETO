@@ -4,7 +4,6 @@ import Header from '../components/Header';
 function MyPage(props) {
   return (
     <>
-     <Header /> 
     </>
   );
 }

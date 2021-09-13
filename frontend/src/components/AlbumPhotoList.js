@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import PhotoHorizontal from './PhotoHorizontal';
 import PhotoVertical from './PhotoVertical';
-import { basicAlbumData } from './data/basicAlbumData';
 
-const MainPhotoList = ({ horizontalToggle }) => {
+const AlbumPhotoList = ({ horizontalToggle, photoData, match }) => {
   return (
     <>
       {
         horizontalToggle ?
         <PhotoHorizontal 
-          photoData={basicAlbumData}
+          photoData={photoData}
+          
         />
           :
         <PhotoVertical
-          photoData={basicAlbumData}
+          photoData={photoData}
         />
       }
     </>
   );
 };
 
-export default MainPhotoList;
+export default AlbumPhotoList;

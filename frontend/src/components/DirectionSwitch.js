@@ -1,48 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import MainPhotosList from './MainPhotoList';
 
-const MainContents = () => {
-  const [horizontalToggle, setHorizontalToggle] = useState(false);
-  const [verticalToggle, setVerticalToggle] = useState(false);
-  const onToggleHorizontal = () => {
-    setHorizontalToggle(true);
-    setVerticalToggle(false);
+const DirectionSwitch = ({
+  onToggleHorizontal,
+  onToggleVertical,
+  horizontalToggle,
+  verticalToggle}) => 
+{
+  const onClickHorizontal = () => {
+    onToggleHorizontal();
   };
-  const onToggleVertical = () => {
-    setVerticalToggle(true);
-    setHorizontalToggle(false);
+  const onClickVertical = () => {
+    onToggleVertical();
   };
-
-  useEffect(() => {
-    setHorizontalToggle(true);
-  },[]);
 
   return (
     <MainContentsBlock>
       <div className="sort_direction_switch">
         <button 
           className={`${horizontalToggle ? 'on_toggle' : 'not_toggle'}`}
-          onClick={onToggleHorizontal}>
+          onClick={onClickHorizontal}>
             Horizontal
         </button>
         <button
           className={`${verticalToggle ? 'on_toggle' : 'not_toggle'}`}
-          onClick={onToggleVertical}>
+          onClick={onClickVertical}>
             Vertical
         </button>
       </div>
-      <MainPhotosList />
     </MainContentsBlock>
   );
 };
 
 const MainContentsBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  margin-top: 5em;
 
   .sort_direction_switch {
     display: flex;
@@ -77,4 +67,4 @@ const MainContentsBlock = styled.div`
 
 `;
 
-export default MainContents;
+export default DirectionSwitch;

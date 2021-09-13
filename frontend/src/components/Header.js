@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Link,  } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { BsPersonSquare } from "react-icons/bs";
-import { HiOutlineSearch } from "react-icons/hi";
 import mainLogo from '../assets/icons/mainLogo.svg';
 
 function Header() {
@@ -107,17 +106,6 @@ const HeaderBlock = styled.div`
     padding-right: 0;
     margin: 20px 0;
   }
-  /* .navbar__right-side_metabus {
-    padding: 10px;
-    margin-right: 20px;
-    width: 140px;
-
-    border-radius: 0.3em;
-    background-color: #f06595;
-    color: white;
-    cursor: pointer;
-
-  } */
   .notice {
     margin-top: 1px;
     padding: 10px 10px 7px 11px;

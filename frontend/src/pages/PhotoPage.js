@@ -5,7 +5,6 @@ import Header from '../components/Header';
 function PhotoPage(props) {
   return (
     <>
-     <Header /> 
     </>
   );
 }

@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IoMdHeartEmpty, IoMdShare } from "react-icons/io";
 
-const MainPhoto = ({
+const Photo = ({
   id,
   imgUrl,
   date,
@@ -11,21 +10,19 @@ const MainPhoto = ({
   }) =>
   {
     return (
-        <MainPhotoBlock>
+        <PhotoBlock>
           <img className="card-img" src={imgUrl} alt={contents} />
-        </MainPhotoBlock>
+        </PhotoBlock>
     );
   }
 
-const MainPhotoBlock = styled.div`
+const PhotoBlock = styled.div`
   height: 100%;
   padding: 2em;
   
   .card-img {
     width: 15em;
   }
-
-
 `;
 
-export default MainPhoto;
+export default Photo;

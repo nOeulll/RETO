@@ -1,12 +1,29 @@
 import React from 'react';
+import styled from 'styled-components';
 
-function DetailsPhoto(props) {
-  return (
-    <div>
-      <h1>Photo Detail</h1>
-      <p>This is details of photo.</p>
-    </div>
-  );
-}
+const DetailsPhoto = ({
+  id,
+  imgUrl,
+  date,
+  time,
+  contents
+  }) =>
+  {
+    return (
+        <PhotoBlock>
+          <img className="card-img" src={imgUrl} alt={contents} />
+          <input type="submit"/>
+        </PhotoBlock>
+    );
+  }
+
+const PhotoBlock = styled.div`
+  height: 100%;
+  padding: 2em;
+  
+  .card-img {
+    width: 15em;
+  }
+`;
 
 export default DetailsPhoto;
