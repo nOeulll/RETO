@@ -3,29 +3,33 @@ import styled from 'styled-components';
 import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs';
 import DetailsPhoto from './DetailsPhoto';
 
-function DetailsPhotoHorizontal({photoData}) {
-  const TOTAL_SLIDES = (photoData.length - 1) * 19
-  const [currentSlide, setCurrentSlide] = useState(0);
+const photoSize = 19;
+
+function DetailsPhotoHorizontal({photoData, id}) {
+  console.log(id);
+  const TOTAL_SLIDES = (photoData.length - 1) * photoSize
+  const [currentSlide, setCurrentSlide] = useState(id * photoSize);
   const slideRef = useRef(null);
   const nextSlide = () => {
       if (currentSlide >= TOTAL_SLIDES) {
         setCurrentSlide(0);
       } else {
-        setCurrentSlide(currentSlide + 19);
+        setCurrentSlide(currentSlide + photoSize);
       }
     };
     const prevSlide = () => {
       if (currentSlide === 0) {
         setCurrentSlide(TOTAL_SLIDES);
       } else {
-        setCurrentSlide(currentSlide - 19);
+        setCurrentSlide(currentSlide - photoSize);
       }
     };
 
     useEffect(() => {
-      slideRef.current.style.transition = "all 0.8s ease-in-out";
+      // slideRef.current.style.transition = "all 0.8s ease-in-out";
       slideRef.current.style.transform = `translateX(-${currentSlide}em)`;
     }, [currentSlide]);
+    
     
   return (
     <Container>

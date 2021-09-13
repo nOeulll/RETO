@@ -1,13 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import DetailsPhotoHorizontal from '../components/DetailsPhotoHorizontal';
+import { basicAlbumData } from '../components/data/basicAlbumData';
 
-function PhotoDetailsPage({ match, history }) {
+function PhotoDetailsPage({ location }) {
+  const id = location.state.id;
   
   return (
     <>
       <MainContentsBlock>
-        <DetailsPhotoHorizontal />
+        <DetailsPhotoHorizontal 
+          photoData={basicAlbumData}
+          id={id}
+        />
       </MainContentsBlock>
     </>
   );

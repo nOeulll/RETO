@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Photo = ({
@@ -9,9 +10,17 @@ const Photo = ({
   contents
   }) =>
   {
+    console.log(id);
     return (
         <PhotoBlock>
+          <Link to={{
+            pathname: "/photo",
+            state: {
+              id: id
+            }
+          }}>
           <img className="card-img" src={imgUrl} alt={contents} />
+          </Link>
         </PhotoBlock>
     );
   }

@@ -14,9 +14,8 @@ function App() {
       <Switch>
         <Route path="/" exact="true" component={MainPage} />
         <Route path="/album/:albumId" component={AlbumPhotoListPage} />
-        <Route path="/album/detalis" component={PhotoDetailsPage} />
         <Route path="/album" component={AlbumPage} />
-        <Route path="/photo" component={PhotoPage} />
+        <Route path="/photo" component={PhotoDetailsPage} />
         <Route path="/my" component={MyPage} />
       </Switch>
     </Router>

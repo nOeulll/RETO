@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const DetailsPhoto = ({
@@ -11,8 +12,8 @@ const DetailsPhoto = ({
   {
     return (
         <PhotoBlock>
-          <img className="card-img" src={imgUrl} alt={contents} />
-          <input type="submit"/>
+            <img className="card-img" src={imgUrl} alt={contents} />
+            {/* <input type="submit"/> */}
         </PhotoBlock>
     );
   }
