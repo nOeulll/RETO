@@ -1,54 +1,25 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs';
-import DetailsPhoto from './DetailsPhoto';
+import DetailsPhotoList from './DetailsPhotoList';
 
-const photoSize = 76;
-
-function DetailsPhotoHorizontal({photoData, id}) {
-  console.log(id);
-  const TOTAL_SLIDES = (photoData.length - 1) * photoSize
-  const [currentSlide, setCurrentSlide] = useState(id * photoSize);
+function DetailsPhotoHorizontal({
+  photoData,
+  prevSlide,
+  nextSlide,
+  currentSlide,
+  totalSlides
+  }) {
   const slideRef = useRef(null);
-  const nextSlide = () => {
-      if (currentSlide >= TOTAL_SLIDES) {
-        setCurrentSlide(0);
-      } else {
-        setCurrentSlide(currentSlide + photoSize);
-      }
-    };
-    const prevSlide = () => {
-      if (currentSlide === 0) {
-        setCurrentSlide(TOTAL_SLIDES);
-      } else {
-        setCurrentSlide(currentSlide - photoSize);
-      }
-    };
-
-    useEffect(() => {
-      slideRef.current.style.transition = "all 0.8s ease-in-out";
-      slideRef.current.style.transform = `translateX(-${currentSlide}em)`;
-    }, [currentSlide]);
-    
-    
+  useEffect(() => {
+    slideRef.current.style.transition = "all 0.8s ease-in-out";
+    slideRef.current.style.transform = `translateX(-${currentSlide}em)`;
+  }, [currentSlide, totalSlides]);
   return (
     <Container>
       <PhotoListBlock>
         <div className="main_photo" ref={slideRef}>
-          {
-            photoData.map(card => {
-              const imgUrl = `../../images/${card.name}`;
-              return (
-                <DetailsPhoto
-                  id={card.id}
-                  imgUrl={imgUrl}
-                  date={card.date}
-                  time={card.time}
-                  contents={card.contents}
-                />
-              );
-            })
-          }
+          <DetailsPhotoList photoData={photoData} />
         </div>
       </PhotoListBlock>
       <Button>

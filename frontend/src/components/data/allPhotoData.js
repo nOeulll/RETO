@@ -1,4 +1,4 @@
-export const basicAlbumData = [
+export const allPhotoData = [
     {
       id: 0,
       name: '0.jpg',
@@ -109,7 +109,7 @@ export const basicAlbumData = [
       date: '2021.09.10',
       time: '17:30',
       empty: true,
-      contents: '스테이크 너무 마시써썽',
+      contents: '',
     },
     {
       id: 14,

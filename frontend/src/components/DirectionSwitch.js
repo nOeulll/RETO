@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const DirectionSwitch = ({
@@ -6,15 +6,8 @@ const DirectionSwitch = ({
   onToggleVertical,
   horizontalToggle,
   verticalToggle,
-  counts }) => 
-{
-  const onClickHorizontal = () => {
-    onToggleHorizontal();
-  };
-  const onClickVertical = () => {
-    onToggleVertical();
-  };
-
+  counts 
+}) => {
   return (
     <MainContentsBlock>
       {
@@ -25,18 +18,18 @@ const DirectionSwitch = ({
             <div className="sort_direction_switch">
               <button 
                 className={`${horizontalToggle ? 'on_toggle' : 'not_toggle'}`}
-                onClick={onClickHorizontal}>
+                onClick={onToggleHorizontal}>
                   Horizontal
               </button>
               <button
                 className={`${verticalToggle ? 'on_toggle' : 'not_toggle'}`}
-                onClick={onClickVertical}>
+                onClick={onToggleVertical}>
                   Vertical
               </button>
             </div>
           )
       }
-  </MainContentsBlock>
+    </MainContentsBlock>
   );
 };
 

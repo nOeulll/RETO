@@ -28,7 +28,6 @@ function AlbumPhotoListPage({ match, location }) {
   const counts = location.state.counts;
   
   return (
-    <>
     <MainContentsBlock>
       <DirectionSwitch
         onToggleHorizontal={onToggleHorizontal}
@@ -44,7 +43,6 @@ function AlbumPhotoListPage({ match, location }) {
         counts={counts}
       />
     </MainContentsBlock>
-    </>
   );
 }
 

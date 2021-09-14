@@ -1,23 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import Photo from './Photo';
+import PhotoList from './PhotoList';
 
 function PhotoVertical({photoData}) {
   return (
     <Container>
-      {
-        photoData.map(card => {
-          const imgUrl = `../../images/${card.name}`;
-          return (
-            <Photo
-              id={card.id}
-              imgUrl={imgUrl}
-              contents={card.contents}
-            />
-          );
-        })
-      }
-      </Container>
+      <PhotoList photoData={photoData} />
+    </Container>
   );
 }
 

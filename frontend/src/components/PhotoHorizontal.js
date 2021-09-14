@@ -1,48 +1,45 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import Photo from './Photo';
+import PhotoList from './PhotoList';
 import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs';
 
-function PhotoHorizontal({photoData}) {
+function PhotoHorizontal({photoData, element = document}) {
   const TOTAL_SLIDES = (photoData.length - 1) * 19
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
   const nextSlide = () => {
-      if (currentSlide >= TOTAL_SLIDES) {
-        setCurrentSlide(0);
-      } else {
-        setCurrentSlide(currentSlide + 19);
-      }
-    };
-    const prevSlide = () => {
-      if (currentSlide === 0) {
-        setCurrentSlide(TOTAL_SLIDES);
-      } else {
-        setCurrentSlide(currentSlide - 19);
-      }
-    };
+    if (currentSlide >= TOTAL_SLIDES) {
+      setCurrentSlide(0);
+    } else {
+      setCurrentSlide(currentSlide + 19);
+    }
+  };
+  const prevSlide = () => {
+    if (currentSlide === 0) {
+      setCurrentSlide(TOTAL_SLIDES);
+    } else {
+      setCurrentSlide(currentSlide - 19);
+    }
+  };
 
-    useEffect(() => {
-      slideRef.current.style.transition = "all 0.5s ease-in-out";
-      slideRef.current.style.transform = `translateX(-${currentSlide}em)`;
-    }, [currentSlide]);
+  useEffect(() => {
+    slideRef.current.style.transition = "all 0.5s ease-in-out";
+    slideRef.current.style.transform = `translateX(-${currentSlide}em)`;
+  }, [currentSlide]);
+
+  element.onkeydown = (e) => {
+    if (e.key === "ArrowRight") {
+      nextSlide();
+    } else if (e.key === "ArrowLeft") {
+      prevSlide();
+    }
+  }
     
   return (
     <Container>
       <PhotoListBlock>
         <div className="main_photo" ref={slideRef}>
-          {
-            photoData.map(card => {
-              const imgUrl = `../../images/${card.name}`;
-              return (
-                <Photo
-                  id={card.id}
-                  imgUrl={imgUrl}
-                  contents={card.contents}
-                />
-              );
-            })
-          }
+          <PhotoList photoData={photoData} />
         </div>
       </PhotoListBlock>
       <Button>

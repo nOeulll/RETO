@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import DirectionSwitch from '../components/DirectionSwitch';
 import MainPhotoList from '../components/MainPhotoList';
 
-function Main({ match, history }) {
+function Main() {
   const [horizontalToggle, setHorizontalToggle] = useState(false);
   const [verticalToggle, setVerticalToggle] = useState(false);
   const onToggleHorizontal = () => {
@@ -20,7 +20,6 @@ function Main({ match, history }) {
   },[]);
   
   return (
-    <>
     <MainContentsBlock>
       <DirectionSwitch
         onToggleHorizontal={onToggleHorizontal}
@@ -32,7 +31,6 @@ function Main({ match, history }) {
         horizontalToggle={horizontalToggle}
       />
     </MainContentsBlock>
-    </>
   );
 }
 

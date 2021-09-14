@@ -1,31 +1,43 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const DetailsPhoto = ({
-  id,
   imgUrl,
-  date,
-  time,
-  contents
-  }) =>
-  {
-    return (
-        <PhotoBlock>
-          <div className="container">
-            <img className="card-img" src={imgUrl} alt={contents} />
-            <div className="description">
-              <div className="dates_wrapper">
-                <div className="date">{date}</div>
-                <div className="time">{time}</div>
-              </div>
-              <div className="contents">{contents}</div>
-              <input className="submit" type="submit"/>
-            </div>
+  photo
+}) => {
+  const { contents, date, time } = photo;
+  return (
+    <PhotoBlock>
+      <div className="container">
+        <img className="card-img" src={imgUrl} alt={contents} />
+        <div className="description">
+          <div className="dates_wrapper">
+            <div className="date">{date}</div>
+            <div className="time">{time}</div>
           </div>
-        </PhotoBlock>
-    );
-  }
+          <div className="contents">{contents}</div>
+          <input className="submit" type="submit"/>
+        </div>
+      </div>
+    </PhotoBlock>
+  );
+}
+
+const DetailsPhotoList = ({
+  photoData
+}) => {
+  return (
+    photoData.map(photo => {
+      const imgUrl = `../../images/${photo.name}`;
+      return (
+        <DetailsPhoto
+          photo={photo}
+          imgUrl={imgUrl}
+        />
+      );
+    })
+  );
+};
 
 const PhotoBlock = styled.div`
 
@@ -48,7 +60,7 @@ const PhotoBlock = styled.div`
   }
 
   .card-img {
-    width: 25em;
+    width: 23em;
     height: 100%;
     margin-right: 2.5em;
   }
@@ -91,4 +103,4 @@ const PhotoBlock = styled.div`
   }
 `;
 
-export default DetailsPhoto;
+export default DetailsPhotoList;

@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import PhotoHorizontal from './PhotoHorizontal';
 import PhotoVertical from './PhotoVertical';
-import { basicAlbumData } from './data/basicAlbumData';
+import { allPhotoData } from './data/allPhotoData';
 
 const MainPhotoList = ({ horizontalToggle }) => {
   return (
-    <>
-      {
-        horizontalToggle ?
+    (
+      horizontalToggle ?
         <PhotoHorizontal 
-          photoData={basicAlbumData}
+          photoData={allPhotoData}
         />
-          :
+      :
         <PhotoVertical
-          photoData={basicAlbumData}
+          photoData={allPhotoData}
         />
-      }
-    </>
+    )
   );
 };
 
