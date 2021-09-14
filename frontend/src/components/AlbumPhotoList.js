@@ -2,19 +2,26 @@ import React, { useEffect, useState } from 'react';
 import PhotoHorizontal from './PhotoHorizontal';
 import PhotoVertical from './PhotoVertical';
 
-const AlbumPhotoList = ({ horizontalToggle, photoData, match }) => {
+const AlbumPhotoList = ({ horizontalToggle, photoData, counts }) => {
   return (
     <>
       {
-        horizontalToggle ?
-        <PhotoHorizontal 
-          photoData={photoData}
-          
-        />
+        counts === 0 ?
+            (
+              <div>There are no pictures saved in this album.</div>
+            )
           :
-        <PhotoVertical
-          photoData={photoData}
-        />
+            (
+              horizontalToggle ?
+                <PhotoHorizontal 
+                  photoData={photoData}
+              
+                />
+              :
+                <PhotoVertical
+                  photoData={photoData}
+                />
+            )
       }
     </>
   );

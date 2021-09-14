@@ -65,7 +65,7 @@ const Container = styled.div`
 
 const PhotoListBlock = styled.div`
   width: 76em;
-  margin: 5em;
+  margin: 0 5em;
   overflow: hidden;
 
   .main_photo {
@@ -77,18 +77,17 @@ const PhotoListBlock = styled.div`
 
 const Button = styled.div`
   all: unset;
-  border-radius: 10px;
-
-  box-sizing: border-box;
-  padding: 12px 15px;
-  width: 100%;
-  height: 100%;
-  
   display: flex;
   position: absolute;
   justify-content: space-between;
-  top: 86%;
+  
+  box-sizing: border-box;
+  padding: 12px 15px;
+  width: 100%;
+  top: 9.7em;
   left: 50%;
+  
+  border-radius: 10px;
   transform: translate(-50%, -50%);
   
   .pre_button {

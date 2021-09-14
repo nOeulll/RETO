@@ -5,7 +5,8 @@ const DirectionSwitch = ({
   onToggleHorizontal,
   onToggleVertical,
   horizontalToggle,
-  verticalToggle}) => 
+  verticalToggle,
+  counts }) => 
 {
   const onClickHorizontal = () => {
     onToggleHorizontal();
@@ -16,24 +17,31 @@ const DirectionSwitch = ({
 
   return (
     <MainContentsBlock>
-      <div className="sort_direction_switch">
-        <button 
-          className={`${horizontalToggle ? 'on_toggle' : 'not_toggle'}`}
-          onClick={onClickHorizontal}>
-            Horizontal
-        </button>
-        <button
-          className={`${verticalToggle ? 'on_toggle' : 'not_toggle'}`}
-          onClick={onClickVertical}>
-            Vertical
-        </button>
-      </div>
-    </MainContentsBlock>
+      {
+        counts === 0 ?
+          (null)
+        :
+          (
+            <div className="sort_direction_switch">
+              <button 
+                className={`${horizontalToggle ? 'on_toggle' : 'not_toggle'}`}
+                onClick={onClickHorizontal}>
+                  Horizontal
+              </button>
+              <button
+                className={`${verticalToggle ? 'on_toggle' : 'not_toggle'}`}
+                onClick={onClickVertical}>
+                  Vertical
+              </button>
+            </div>
+          )
+      }
+  </MainContentsBlock>
   );
 };
 
 const MainContentsBlock = styled.div`
-
+  margin-left: 59em;
   .sort_direction_switch {
     display: flex;
     justify-content: space-between;

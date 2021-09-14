@@ -22,7 +22,6 @@ const MainContentsBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0.5em;
 `;
 
 export default PhotoDetailsPage;

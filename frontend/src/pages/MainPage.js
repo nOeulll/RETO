@@ -41,7 +41,7 @@ const MainContentsBlock = styled.div`
   flex-direction: column;
   align-items: center;
 
-  margin-top: 5em;
+  margin-top: 7em;
 
 `;
 

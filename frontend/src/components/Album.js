@@ -11,7 +11,12 @@ function AlbumCard({
 {
   return (
       <AlbumCardBlock>
-        <Link to={`/album/${id}`}>
+        <Link to={{
+          pathname: id === 0 ? '/' : '/album/' + id,
+          state: {
+            counts: counts
+          }
+        }}>
           <img className="book_img" src={albumBook} alt="album" />
           <ul className="text_card">
             <li className="card-title">{title}</li>

@@ -22,7 +22,7 @@ function PhotoVertical({photoData}) {
 }
 
 const Container = styled.div`
-  margin: 5em 10em;
+  margin: 0em 10em;
 
   box-sizing: border-box;
   display: grid;

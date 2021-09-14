@@ -74,7 +74,7 @@ const PhotoListBlock = styled.div`
   align-items: center;
   width: 76em;
   margin: 0 5em;
-  height: 40em;
+  height: 39.8em;
   overflow: hidden;
 
   .main_photo {
@@ -85,18 +85,18 @@ const PhotoListBlock = styled.div`
 
 const Button = styled.div`
   all: unset;
-  border-radius: 10px;
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
 
   box-sizing: border-box;
   padding: 12px 15px;
   width: 100%;
-  height: 100%;
-  
-  display: flex;
-  position: absolute;
-  justify-content: space-between;
-  top: 86%;
+  top: 19em;
   left: 50%;
+  
+  border-radius: 10px;
+
   transform: translate(-50%, -50%);
   
   .pre_button {

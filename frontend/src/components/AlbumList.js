@@ -6,33 +6,33 @@ function AlbumList(props) {
   const albumCardList = [
     {
       id: 0,
-      counts: 10,
+      counts: 26,
       title: "Basic",
     },
     {
       id: 1,
-      counts: 1,
-      title: "Like",
+      counts: 6,
+      title: "Travel",
     },
     {
       id: 2,
-      counts: 3,
-      title: "Friends",
+      counts: 13,
+      title: "Foods",
     },
     {
       id: 3,
-      counts: 2,
-      title: "Family",
+      counts: 4,
+      title: "Daily",
     },
     {
       id: 4,
       counts: 0,
-      title: "Daily",
+      title: "Family",
     },
     {
       id: 5,
-      counts: 0,
-      title: "+",
+      counts: 3,
+      title: "Friends",
     },
   ]
   return (
