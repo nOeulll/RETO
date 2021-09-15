@@ -103,13 +103,16 @@ const PhotoBlock = styled.div`
 
     padding: 0.5rem 1rem;
     margin-left: 14em;
-    margin-top: 5em;
+    margin-top: 8em;
+    width: 5em;
+    border: 0.1em solid #ff7676;
 
     &:hover {
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     color: #ff7676;
     background-color: #ffffff;
+    border: 0.1em solid #ff7676;
   }
 
   }

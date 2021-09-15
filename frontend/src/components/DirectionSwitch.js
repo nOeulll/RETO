@@ -35,6 +35,7 @@ const DirectionSwitch = ({
 
 const MainContentsBlock = styled.div`
   margin-left: 59em;
+
   .sort_direction_switch {
     display: flex;
     justify-content: space-between;
@@ -51,6 +52,7 @@ const MainContentsBlock = styled.div`
   button {
     padding: 0.7rem 1.3rem;
     border-radius: 2em;
+    width: 100%;
   }
   
   .on_toggle {
