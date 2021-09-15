@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import DirectionSwitch from '../components/DirectionSwitch';
-import MainPhotoList from '../components/MainPhotoList';
+import { allPhotoData } from '../components/data/allPhotoData';
+import ChooseDirection from '../components/ChooseDirection';
 
 function Main() {
   const [horizontalToggle, setHorizontalToggle] = useState(false);
@@ -26,9 +27,11 @@ function Main() {
         onToggleVertical={onToggleVertical}
         horizontalToggle={horizontalToggle}
         verticalToggle={verticalToggle}
+        photoData={allPhotoData}
       />
-      <MainPhotoList
+      <ChooseDirection
         horizontalToggle={horizontalToggle}
+        photoData={allPhotoData}
       />
     </MainContentsBlock>
   );

@@ -8,9 +8,6 @@ function Album({ album }) {
     <AlbumBlock>
       <Link to={{
         pathname: album.id === 0 ? '/' : `/album/${album.id}`,
-        state: {
-          counts: album.counts
-        }
       }}>
         <img className="book_img" src={albumBook} alt="album" />
         <ul className="text_card">
@@ -75,7 +72,7 @@ const AlbumBlock = styled.div`
   .card-title {
     padding: 5px 0;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 1.1em;
   }
 `;
 

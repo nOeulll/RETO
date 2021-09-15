@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import DirectionSwitch from '../components/DirectionSwitch';
-import AlbumPhotoList from '../components/AlbumPhotoList';
 import { albumData } from '../components/data/albumData';
+import ChooseDirection from '../components/ChooseDirection';
 
-function AlbumPhotoListPage({ match, location }) {
+function AlbumPhotoListPage({ match, location, history }) {
   const [horizontalToggle, setHorizontalToggle] = useState(false);
   const [verticalToggle, setVerticalToggle] = useState(false);
   const onToggleHorizontal = () => {
@@ -25,8 +25,7 @@ function AlbumPhotoListPage({ match, location }) {
   if (!photoData) {
     return <div>This album doesn't exist.</div>;
   }
-  const counts = location.state.counts;
-  
+
   return (
     <MainContentsBlock>
       <DirectionSwitch
@@ -34,13 +33,11 @@ function AlbumPhotoListPage({ match, location }) {
         onToggleVertical={onToggleVertical}
         horizontalToggle={horizontalToggle}
         verticalToggle={verticalToggle}
-        counts={counts}
+        photoData={photoData}
       />
-      <AlbumPhotoList
+      <ChooseDirection
         horizontalToggle={horizontalToggle}
         photoData={photoData}
-        match={match}
-        counts={counts}
       />
     </MainContentsBlock>
   );

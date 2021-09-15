@@ -2,9 +2,9 @@ import React from 'react';
 import PhotoHorizontal from './PhotoHorizontal';
 import PhotoVertical from './PhotoVertical';
 
-const AlbumPhotoList = ({ horizontalToggle, photoData, counts }) => {
+const ChooseDirection = ({ horizontalToggle, photoData }) => {
   return (
-    counts === 0 ?
+    photoData.length === 0 ?
       <div>There are no photos saved in this album.</div>
       :
       ( horizontalToggle ?
@@ -19,4 +19,4 @@ const AlbumPhotoList = ({ horizontalToggle, photoData, counts }) => {
   );
 };
 
-export default AlbumPhotoList;
+export default ChooseDirection;

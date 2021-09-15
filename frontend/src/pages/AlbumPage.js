@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import AddAlbum from '../components/AddAlbum';
 import AlbumList from '../components/AlbumList';

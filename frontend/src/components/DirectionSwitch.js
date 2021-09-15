@@ -6,12 +6,12 @@ const DirectionSwitch = ({
   onToggleVertical,
   horizontalToggle,
   verticalToggle,
-  counts 
+  photoData
 }) => {
   return (
     <MainContentsBlock>
       {
-        counts === 0 ?
+        photoData.length === 0 ?
           (null)
         :
           (

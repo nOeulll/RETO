@@ -31,7 +31,7 @@ const AddAlbum = ({title, onChange, onCreateAlbum}) => {
           <div className="text_card">
             <input
               name="title"
-              className={isAddAlbum ? "card-title" : "hidden"}
+              className={isAddAlbum ? "input-title" : "hidden"}
               placeholder="Name"
               ref={nameInput}
               onChange={onChange}
@@ -79,9 +79,13 @@ const AlbumCardBlock = styled.div`
   
   .card-title {
     padding: 5px 0;
-    font-size: 1.8em;
+    font-size: 1.7em;
     color: #2e4052;
-
+  }
+  .input-title {
+    padding: 5px 0;
+    font-size: 1.1em;
+    color: #2e4052;
   }
   .submit {
     background-color: #ff7676;
@@ -98,6 +102,7 @@ const AlbumCardBlock = styled.div`
   }
   .hidden {
     display: none;
+    font-size: 0.9em;
   }
 `;
 
