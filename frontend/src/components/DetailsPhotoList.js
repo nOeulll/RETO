@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { MdDelete } from 'react-icons/md';
 
 const DetailsPhoto = ({
   imgUrl,
@@ -8,6 +9,7 @@ const DetailsPhoto = ({
   const { contents, date, time } = photo;
   return (
     <PhotoBlock>
+      <MdDeleteBlock><MdDelete /></MdDeleteBlock>
       <div className="container">
         <img className="card-img" src={imgUrl} alt={contents} />
         <div className="description">
@@ -16,7 +18,7 @@ const DetailsPhoto = ({
             <div className="time">{time}</div>
           </div>
           <div className="contents">{contents}</div>
-          <input className="submit" type="submit"/>
+          <button className="edit">Edit</button>
         </div>
       </div>
     </PhotoBlock>
@@ -40,6 +42,7 @@ const DetailsPhotoList = ({
 };
 
 const PhotoBlock = styled.div`
+  position: relative;
 
   display: flex;
   justify-content: center;
@@ -51,7 +54,7 @@ const PhotoBlock = styled.div`
 
   box-shadow: 0 0 0.7rem rgba(46, 64, 82, 0.3);  
   border-radius: 2em;
-
+  
   .container {
     display: flex;
     justify-content: space-between;
@@ -91,7 +94,7 @@ const PhotoBlock = styled.div`
     color: #212529;
   }
 
-  .submit {
+  .edit {
     background-color: #ff7676;
     color: #ffffff;
 
@@ -100,7 +103,32 @@ const PhotoBlock = styled.div`
 
     padding: 0.5rem 1rem;
     margin-left: 14em;
+    margin-top: 5em;
+
+    &:hover {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    color: #ff7676;
+    background-color: #ffffff;
   }
+
+  }
+`;
+
+const MdDeleteBlock = styled.div`
+  color: #2e4052;
+  position: absolute;
+  top: 1em;
+  right: 1.3em;
+
+  font-size: 1.7em;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    color: #ff7676;
+  }
+
 `;
 
 export default DetailsPhotoList;

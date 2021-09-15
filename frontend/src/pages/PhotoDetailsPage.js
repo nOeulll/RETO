@@ -11,14 +11,14 @@ function PhotoDetailsPage({ location, element = document }) {
   const [currentSlide, setCurrentSlide] = useState(id * photoSize);
   const nextSlide = () => {
     if (currentSlide >= totalSlides) {
-      setCurrentSlide(0);
+      setCurrentSlide(totalSlides);
     } else {
       setCurrentSlide(currentSlide + photoSize);
     }
   };
   const prevSlide = () => {
     if (currentSlide === 0) {
-      setCurrentSlide(totalSlides);
+      setCurrentSlide(0);
     } else {
       setCurrentSlide(currentSlide - photoSize);
     }

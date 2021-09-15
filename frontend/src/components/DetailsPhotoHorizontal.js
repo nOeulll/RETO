@@ -93,16 +93,16 @@ const Button = styled.div`
 const LeftBlock = styled.div`
  font-size: 3em;
  &:hover {
-      transition: all 0.2s ease-in-out;
-      cursor: pointer;
-      color: #ff7676;
-    }
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    color: #ff7676;
+  }
     `;
 const RightBlock = styled.div`
  font-size: 3em;
  &:hover {
-      transition: all 0.2s ease-in-out;
-      cursor: pointer;
-      color: #ff7676;
-    }
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    color: #ff7676;
+  }
 `;

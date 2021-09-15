@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import AddAlbum from '../components/AddAlbum';
 import AlbumList from '../components/AlbumList';
@@ -79,11 +79,11 @@ function AlbumPage() {
 }
 
 const AlbumCardListBlock = styled.div`
-  margin: 5em 10em;
+  margin: 5em 13em;
 
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 6rem;
+  grid-gap: 5rem;
 `;
 export default AlbumPage;

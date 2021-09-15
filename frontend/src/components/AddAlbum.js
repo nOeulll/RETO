@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import albumBook from '../assets/images/book.svg'
 import styled from 'styled-components';
+import {BsPlus} from 'react-icons/bs'
 
 const AddAlbum = ({title, onChange, onCreateAlbum}) => {
   const nameInput = useRef(null);
@@ -36,7 +37,7 @@ const AddAlbum = ({title, onChange, onCreateAlbum}) => {
               onChange={onChange}
               value={title}
             />
-            <div className={isAddAlbum ? "hidden" : "card-title"}>+</div>
+            <BsPlusBlock className={isAddAlbum ? "hidden" : "card-title"}><BsPlus /></BsPlusBlock>
             <button className={isAddAlbum ? "submit" : "hidden"} onClick={onCreateAlbum}>Save</button>
           </div>
         </div>
@@ -78,8 +79,9 @@ const AlbumCardBlock = styled.div`
   
   .card-title {
     padding: 5px 0;
-    font-weight: 500;
-    font-size: 17px;
+    font-size: 1.8em;
+    color: #2e4052;
+
   }
   .submit {
     background-color: #ff7676;
@@ -98,5 +100,7 @@ const AlbumCardBlock = styled.div`
     display: none;
   }
 `;
+
+const BsPlusBlock = styled.div``;
 
 export default AddAlbum;

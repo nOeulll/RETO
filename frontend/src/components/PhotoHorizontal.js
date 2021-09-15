@@ -3,22 +3,24 @@ import styled from 'styled-components';
 import PhotoList from './PhotoList';
 import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs';
 
+const photoSize = 19;
+
 function PhotoHorizontal({photoData, element = document}) {
-  const TOTAL_SLIDES = (photoData.length - 1) * 19
+  const totalSlides = (photoData.length - 1) * photoSize
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
   const nextSlide = () => {
-    if (currentSlide >= TOTAL_SLIDES) {
-      setCurrentSlide(0);
+    if (currentSlide >= totalSlides) {
+      setCurrentSlide(totalSlides);
     } else {
-      setCurrentSlide(currentSlide + 19);
+      setCurrentSlide(currentSlide + photoSize);
     }
   };
   const prevSlide = () => {
     if (currentSlide === 0) {
-      setCurrentSlide(TOTAL_SLIDES);
+      setCurrentSlide(0);
     } else {
-      setCurrentSlide(currentSlide - 19);
+      setCurrentSlide(currentSlide - photoSize);
     }
   };
 
